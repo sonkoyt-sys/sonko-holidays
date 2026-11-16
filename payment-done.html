@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonko Holidays - payment</title>
+<style>
+  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+         background: #FAF7F2; color: #1E1E1E; }
+  header { background: #1E1E1E; color: #B09E80; text-align: center;
+           padding: 24px 16px; letter-spacing: 3px; font-size: 20px; }
+  main { max-width: 480px; margin: 32px auto; padding: 0 20px; text-align: center; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  p { line-height: 1.5; }
+  .ref { display: inline-block; margin-top: 8px; padding: 8px 16px; background: #EDE4D3;
+         border-radius: 8px; font-weight: 700; font-size: 20px; }
+</style>
+</head>
+<body>
+<header>SONKO HOLIDAYS</header>
+<main>
+  <h1>Thank you</h1>
+  <p>If your payment went through, your booking is confirmed automatically.</p>
+  <p>You can now close this page and go back to the Sonko Holidays app to see it.</p>
+  <div id="ref" class="ref" style="display:none"></div>
+  <p style="margin-top:24px;font-size:14px;color:#555">
+    Questions? WhatsApp us on +220 87 208 0682.
+  </p>
+</main>
+<script>
+  var r = new URLSearchParams(location.search).get('ref');
+  if (r && /^[A-Za-z0-9]{4,12}$/.test(r)) {
+    var el = document.getElementById('ref');
+    el.textContent = 'Booking ' + r;
+    el.style.display = 'inline-block';
+  }
+</script>
+</body>
+</html>
